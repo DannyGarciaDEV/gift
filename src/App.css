@@ -1,0 +1,185 @@
+/* Apply a subtle gradient background */
+body {
+  background: linear-gradient(135deg, #f0e6f6, #f9f1f6);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Center content */
+.container {
+  text-align: center;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 15px;
+}
+
+/* Button container */
+.button-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+}
+
+/* Stylish button */
+.button {
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  min-width: 160px; /* Ensure buttons have a minimum width */
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  transform: scale(1.1);
+}
+
+.button.false {
+  background: linear-gradient(135deg, #f8b6b1, #f5d6d1);
+}
+
+.button.false:hover {
+  background: linear-gradient(135deg, #f18f8d, #f4a6a1);
+  transform: scale(1.1);
+}
+
+/* Add animation for the message box */
+.message-box {
+  max-width: 650px;
+  background: #ffffff;
+  margin-top: 30px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  line-height: 1.8;
+  border-left: 5px solid #ff758c;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title */
+.message-box .title {
+  color: #ff758c;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: fadeIn 1s forwards;
+}
+
+/* Signature */
+.message-box .signature {
+  font-weight: bold;
+  text-align: right;
+  color: #ff758c;
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+/* Image container styling */
+.image-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+  animation: fadeIn 1s forwards;
+}
+
+/* Styling for images */
+.message-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.message-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  /* Adjust the message box padding and max-width for mobile */
+  .message-box {
+    padding: 20px;
+    max-width: 90%;
+    margin-top: 20px;
+  }
+
+  /* Adjust the font size for mobile */
+  .message-box .title {
+    font-size: 20px;
+  }
+
+  .message-box .signature {
+    font-size: 16px;
+  }
+
+  .message-image {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* For smaller devices like phones */
+@media screen and (max-width: 480px) {
+  .button {
+    padding: 12px 24px;
+    font-size: 16px;
+    min-width: 140px;
+  }
+
+  /* Adjust image sizes and margins */
+  .message-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .message-box {
+    padding: 15px;
+    font-size: 14px;
+    max-width: 90%;
+  }
+
+  /* Adjust the title and signature font sizes */
+  .message-box .title {
+    font-size: 18px;
+  }
+
+  .message-box .signature {
+    font-size: 14px;
+  }
+}
