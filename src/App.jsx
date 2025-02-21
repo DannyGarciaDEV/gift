@@ -51,8 +51,9 @@ function App() {
           {/* Add the images */}
           <div className="image-container">
             <img src="/img.jpeg" alt="Image 1" className="message-image" />
-            <img src="/imgs.jpeg" alt="Image 2" className="message-image" />
             <img src="/imgg.jpeg" alt="Image 3" className="message-image" />
+            <img src="/imgs.jpeg" alt="Image 2" className="message-image" />
+          
           </div>
 
           <p>
